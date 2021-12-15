@@ -39,7 +39,7 @@ export const Logox = (props)=>{
     return(
         
         <Logoxx >
-            Mawroo<span style={{color:colorx.pinkM}} >.</span>
+            UwU<span style={{color:colorx.pinkM}} >House</span>
         </Logoxx>
         
     );
@@ -182,6 +182,92 @@ export const TextLinksNoDot = (props)=>{
        );
    }
    
+
+export const Xenter =styled.div`
+   display:flex;
+   align-items:center;
+   width:100%;
+   height:40px;
+   font-weight:300;
+`;
+export const DropdownStyle =styled.select`
+    border-radius:5px;
+    padding:10px;
+    background-color:transparent;
+    color:${colorx.blackM};
+    border:solid 1px ${colorx.gray2};
+    font-family:'Mitr',sans-serif;
+    font-weight:300;
+    &:focus{
+        border:solid 2px ${colorx.blackM};
+    }           
+`
+export const DatePicker = styled.input`
+    border-radius:5px;
+    padding:10px;
+    font-weight:300;
+    font-family:'Mitr',sans-serif;
+    background-color:transparent;
+    border:solid 1px ${colorx.gray2};
+    &:focus{
+        border:solid 2px ${colorx.blackM};
+    }       
+`
+export const RadioButton = styled.input`
+    border:solid 1px ${colorx.gray2};
+    font-family:'Mitr',sans-serif;
+    font-weight:300;
+    &:focus{
+        border:solid 2px ${colorx.blackM};
+    }       
+`
+export const TextInputStyle =styled.input`
+            min-width:100%;
+            height:40px;
+            border-radius:5px;
+            padding:10px;
+            font-weight:300;
+            font-family:'Mitr',sans-serif;
+            color:${colorx.blackM};
+            background-color:${props => props.lock ? colorx.gray2 : "transparent"};
+            border:solid 1px ${props => props.errorx ? 'red' : colorx.gray2};
+            &:focus{
+                border:solid 2px ${colorx.blackM};
+            }       
+        `
+
+        export  const AreaTextInputStyle =styled.textarea`
+            min-width:100%;
+            border-radius:5px;
+            font-weight:300;
+            padding:10px;
+            font-family:'Mitr',sans-serif;
+            color:${colorx.blackM};
+            border:solid 1px ${colorx.gray2};
+            &:focus{
+                border:solid 2px ${colorx.blackM};
+            }       
+        `
+       
+    
+    
+        export  const CheckboxStyle =styled.input`
+            margin-top:10px;
+            margin-bottom:12px;
+            width:18px;
+            font-weight:300;
+            height:18px;
+            font-family:'Mitr',sans-serif;
+            border:solid 1px ${colorx.gray2};
+            &:focus{
+                border:solid 2px ${colorx.blackM};
+            }       
+        `
+
+       
+
+    
+
 
 
 

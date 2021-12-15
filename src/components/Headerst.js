@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 // import colorx
 import colorx from '../style/colorx';
-
+import bg1 from '../img/img/bg1.png';
 export const Headerx = styled.div`
 
     display:flex;
@@ -11,8 +11,10 @@ export const Headerx = styled.div`
     padding-top:250px;
     width:100%;
     border-radius: 0px 0px 50px 0px;
-    background:${colorx.blueM};
-    // background:${colorx.whiteM};
+    //background:${colorx.blueM};
+    background-image: url(${bg1});
+    background-repeat: no-repeat;
+    background-size: cover;
     
 
     transition: all 300ms ease-in-out;

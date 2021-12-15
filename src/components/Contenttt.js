@@ -36,6 +36,7 @@ import homeHow from '../img/illustate/homeHow.svg';
 
 
 const Contenttt = () => {
+   
     return (
         <>
             <ContentContainer id='find-house'>
@@ -49,7 +50,7 @@ const Contenttt = () => {
                         <div className='contentText'>
                             <div className='blank-space'>หาที่พักปล่อยเช่าที่ถูกใจ</div><div className='blank-space'>ทำไมมันยากจัง</div>
                         </div>
-                        <div>ลองใช้ Mawroo<span style={{color:colorx.pinkM}} >.</span> ดูสิ</div>
+                        <div>ลองใช้ UwU<span style={{color:colorx.pinkM}} >House</span> ดูสิ</div>
 
                         </TextMain>
                         <DivButtonContent>
@@ -79,7 +80,7 @@ const Contenttt = () => {
                         </div>
                         
                         
-                        <div>ง่ายๆแค่ใช้ Mawroo<span style={{color:colorx.pinkM}} >.</span></div>
+                        <div>ง่ายๆแค่ใช้ UwU<span style={{color:colorx.pinkM}} >House</span></div>
 
 
                         </TextMain>
@@ -99,25 +100,22 @@ const Contenttt = () => {
             <ContentContainer>
 
                 <DivContentInsider>
+                    
+
+                    
                     <ContentInsider>
                         <ContentInsiderHow>
                         <TextHow dark>
                             วิธีการใช้งาน Mawroo.
                             
                         </TextHow>
-                        <ContentInsiderImg src={homeHow}/>
-                        </ContentInsiderHow>
-                    </ContentInsider>
-
-                    
-                    <ContentInsider>
-                        <ContentInsiderHow>
                         <DivHow>
+                        
                             1. กดไปที่ปุ่มเริ่มต้น
                             <DivHowButton>
                             <Link to='find-house' smooth='treaseOutQuadue' offset={-60} duration={0}><ButtonxLogo  ImgName={home} widthhh='180' FontSize='18' FontWeight='300' colorrr={colorx.yellowM} Textx='เริ่มต้นใช้งาน'/></Link>
                                 หรือ
-                                <Link to='find-roommate' smooth='treaseOutQuadue' offset={-100} duration={100}><ButtonxLogo  ImgName={friends} widthhh='180' FontSize='18' FontWeight='300' colorrr={colorx.pinkM} Textx='เริ่มต้นใช้งาน'/></Link>
+                            <Link to='find-roommate' smooth='treaseOutQuadue' offset={-100} duration={100}><ButtonxLogo  ImgName={friends} widthhh='180' FontSize='18' FontWeight='300' colorrr={colorx.pinkM} Textx='เริ่มต้นใช้งาน'/></Link>
                             </DivHowButton>
                         </DivHow>
                         <DivHow>

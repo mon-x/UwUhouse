@@ -34,6 +34,7 @@ const Footerstyled = styled.div`
 
 
 const Footerrr = () => {
+    var getyearx = new Date().getFullYear();
     return (
         <>
             <Footerstyled >
@@ -41,7 +42,7 @@ const Footerrr = () => {
                     <div onClick={()=>scroll.scrollToTop( {duration:0,smooth:'easeOutQuad'})}>
                         <Logox FontSize='25' FontWeight='500' colorrr={colorx.whiteM} />
                     </div>
-                    © 2021 All rights reserved
+                    © {getyearx} All rights reserved
                 </div>
                 <div className='footerrr'><img src={thaiflag} className='flag'/>Thailand</div>
             </Footerstyled>

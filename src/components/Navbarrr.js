@@ -57,19 +57,72 @@ const Navbarrr = () => {
 
     const location = useLocation();
     let currentpath = location.pathname;
+
+
+
     const LogoxClickUrl =()=>{
-    if( currentpath === '/'){
-        scroll.scrollToTop({duration:0,smooth:'easeOutQuad',}) 
-        
-    }
-    else{ 
-        gotHomepage();
-    }
-} 
+        if( currentpath === '/'){
+            scroll.scrollToTop({duration:0,smooth:'easeOutQuad',}); 
+            
+        }
+        else{ 
+            gotHomepage();
+            
+        }
+    } 
+    const LogoxClickUrlSlide =()=>{
+        if( currentpath === '/'){
+            scroll.scrollToTop({duration:0,smooth:'easeOutQuad',}); 
+            setOpen(!open);
+        }
+        else{ 
+            gotHomepage();
+            
+        }
+    } 
+
     // function space
     const Clickkkkked = ()=>{
         setOpen(!open);
         
+    }
+
+    const ClickHowToUse =()=>{
+        if( currentpath === '/'){
+            scroll.scrollTo(2000,{duration:0,smooth:'easeOutQuad',}); 
+            setOpen(!open);
+            
+        }
+        else{ 
+            history.push("/");
+            scroll.scrollTo(2000,{duration:0,smooth:'easeOutQuad',});
+            setOpen(!open);
+        }
+    }
+
+
+
+    const ClickGoToForm=()=>{
+        if( currentpath === '/formInfomation'){
+            scroll.scrollToTop({duration:0,smooth:'easeOutQuad',}); 
+            setOpen(!open);
+            
+        }
+        else { 
+            history.push("/formInfomation");
+            scroll.scrollToTop({duration:0,smooth:'easeOutQuad',});
+        }
+    }
+    const ClickGoToRoommate=()=>{
+        if( currentpath === '/WeAreStillDevelopThifeature'){
+            scroll.scrollToTop({duration:0,smooth:'easeOutQuad',}); 
+            setOpen(!open);
+            
+        }
+        else { 
+            history.push("/WeAreStillDevelopThifeature");
+            scroll.scrollToTop({duration:0,smooth:'easeOutQuad',});
+        }
     }
     return (
         <>
@@ -99,15 +152,21 @@ const Navbarrr = () => {
                                 <MenuButtonSticks/>
                                 <MenuButtonSticks/>
                             </MenuButton>
-                            <div onClick={LogoxClickUrl}>
+                            <div onClick={LogoxClickUrlSlide}>
                                 <Logox FontSize='30' FontWeight='500' colorrr={colorx.blueM} />
                             </div>
                         </NavMenuLinksTop>
 
                         <NavMenuLinksBottom> 
-                            <LinkUrl to='/formInfomation'  offset='2000'><ButtonxLogo  ImgName={home}  widthhh='225' FontSize='18' FontWeight='300' colorrr={colorx.yellowM} Textx='ค้นหาที่พักปล่อยเช่า'/></LinkUrl>
-                            <LinkUrl to='/WeAreStillDevelopThifeature' ><ButtonxLogo ImgName={friends}  widthhh='225' FontSize='18' FontWeight='300' colorrr={colorx.pinkM} Textx='ค้นหา Roommate'/></LinkUrl>
-                            <TextLinks FontSize='16' FontWeight='300' colorlinkText={colorx.blackM}/>
+                            <div onClick={ClickGoToForm}>
+                                <ButtonxLogo  ImgName={home}  widthhh='225' FontSize='18' FontWeight='300' colorrr={colorx.yellowM} Textx='ค้นหาที่พักปล่อยเช่า'/>
+                            </div>
+                            <div onClick={ClickGoToRoommate}>
+                                <ButtonxLogo ImgName={friends}  widthhh='225' FontSize='18' FontWeight='300' colorrr={colorx.pinkM} Textx='ค้นหา Roommate'/>
+                            </div>
+                            <div onClick={ClickHowToUse}>
+                                <TextLinks FontSize='16' FontWeight='300' colorlinkText={colorx.blackM}/>
+                            </div>
                         </NavMenuLinksBottom>
                     
         

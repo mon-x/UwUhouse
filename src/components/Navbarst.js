@@ -120,5 +120,6 @@ export const BackgroundSlideMenu = styled.div`
     height:1000%;
     transition: all 50ms ease-in-out;
     transform:${props => props.statex ? "translateX(-50%)" : "translateX(110%)"};
+    backdrop-filter: blur(4px);
     
 `
