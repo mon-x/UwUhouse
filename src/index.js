@@ -7,8 +7,7 @@ import Consolex from './components/mainComponent';
 
 
 
-
-
+console.warn = () => {};
 ReactDOM.render(
   <React.StrictMode>
     <Appxr/>

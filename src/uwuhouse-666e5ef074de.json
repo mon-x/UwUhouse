@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "uwuhouse",
+  "private_key_id": "666e5ef074de79e8909eb0f69997bcde91de006f",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCtnXx1ZFycsTma\nHPWZBrM4kV2a2s5DTh5Q8jJkaPeBDRFTJgMlqDAH3EQvSyrcqNPmr2osAAinpRyZ\nspzioc61eUs2NNlfS1DzttMHQpFEnuNIfFViw29/2UB+88aQ4TOuRLaoCjp3rJp5\nNypb/OW/HEbZehTrYCg32ayn45LcBtIpUt8gnJOWNe4Sgv/0kycfNWxocKgjFKSm\ndBEi9CUSDI0f6Q+kyU77GYd2Siuhb75MBKiF016F6ncoQKVW9Sh+74zYZDEwhF9m\nWaOVWY4v6s2puBiwrV0wSMnONnN7YLYT2zWF3gatPt+OVVPd4qRtpCr3ZDj66ypU\nvGhWMphrAgMBAAECggEAA8XJmw/VVvUfU2lJ4vHhoIFajEKXiDnhCcRBjEU42TdZ\nLYcRbj0mq6N0x3K1zNOBJODVIn1u5emxSRu3y54iTKo4LeAQt/Pkhe87ZbIW6Wu3\np6JGa4RKRRGjYT7Xc6iytuVr8xNwOTW2EGhxxX7ycehhsVi1FKpJvwqK9Tj9cd+A\n1OffY4OhpPXQDUqldgA2Y+Ofes7JCsaNFTiwjVWPfSZYbJcc9H0l6llfSr9wK7YU\noUXBe23BNuO6xKrHRmODRIAJVOijQFWF7qpNFlGHjGItqNyDxyBsLGMRONRBo2uA\naJoUy1vynSZUepoVgWV5H4qs0i6lWgxX3cYtLOqEBQKBgQDwAqdHJP+vrErKKr8z\nvcCOUAxviPcyZS/uMnK+3LuATX/RHhGR1JdglzZCRlm6fvlJfZHjdrVJCNDprpte\n7w2QUhjZHkI9HnGe0MjLIYTTP5aIP2mQOqgHr43XQagE0b/TKi1mkUq+HJ+dq7lo\nr+7LUBD02aMw3bzkXBiwjxXFnQKBgQC5LnihyETeMuRTN9TZBdL53N+mdJyhacQF\ndrl5miHYdzWuFk9d9X7HawtnZHp6dJZI6rWmTfAcYjMM8grQvTjkFit9idqYRVid\nNYM6YjYT4g0dA/RbZ7GVIxpBiZOB5sbLDsQLtTgqpyNzHc/CylT4aNeLvq76OCn+\nC4r5P6m7pwKBgQDsXdCb0iY0vfsRyrNuo2slPFRi64J3EQv5C5nRudS2cJx2N6SZ\n98H1EDYRYvMvJakf5Rht6RR0DsifuqOtBMRY42ExQgl946OGApwc4K/M04zONZUi\nw4GDwDJyUWjFBkRiE+GOZ3wyakIPp3T7UnhbpkhsuoFquJU0WDbAesm4SQKBgHGp\npn2W0T6Zei/iGxFCU+btvZEMDn+8zYaVAu8yvgeB1D8QjpKbdr+sYomJ0OuM2BnV\nhr2XJQQm+jK99gl9u4e0W+loTfYcynFkQTH6yjqWC3p9zOS11vg1XY5QhWu8XNSS\nMZ8GEn2LrWShLb7gNhtrLrIlznzjMFMwfpLSkroNAoGAaGIM4qIg9R8gnqlGxCcg\nkqjm5PqHGDe7iiB4113f20mBi0yTAPJhwty9mZGXwgoc7g4yzNrTGDV6B6lYCqyN\ndyrsige7ZeMT9OubGlqRxX7STxB2kF52jWha3bRLvt5/QbZRFw9l2lywJRkoeMtW\nh0XHsHjxtlQtXZ4QnoqL4y4=\n-----END PRIVATE KEY-----\n",
+  "client_email": "uwuhouse@uwuhouse.iam.gserviceaccount.com",
+  "client_id": "116033223077422215738",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/uwuhouse%40uwuhouse.iam.gserviceaccount.com"
+}

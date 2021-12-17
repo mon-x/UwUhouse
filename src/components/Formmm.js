@@ -6,6 +6,9 @@ import { RangeDatePicker } from 'react-google-flight-datepicker';
 import 'react-google-flight-datepicker/dist/main.css';
 
 
+// google spread-sheet
+
+
 // import colorx
 import colorx from '../style/colorx';
 
@@ -59,7 +62,7 @@ import {
     CheckboxStyle,
 } from './mainComponent';
 
-
+import {GoogleSpreadsheet} from 'google-spreadsheet';
 
 import verify from '../img/illustate/verify.svg';
 
@@ -69,18 +72,65 @@ export const toptoptop=()=>{
 }
 
 
-const Formmmx =()=>{
+const {promisify} = require('util');
 
+const Formmmx =()=>{
+    let history = useHistory();
     // function area
     let [LineOpen,SetLineOpen] = useState(true);
     let [FacebookOpen,SetFacebookOpen] = useState(true);
     let [EmailOpen,SetEmailOpen] = useState(true);
-
+    
 
 
     // ------------->
     // prepair data
     const SendData=()=>{
+        // async function test (){
+        //     const creds = require('../uwuhouse-666e5ef074de.json'); // the file saved above
+        //     const doc = new GoogleSpreadsheet('1YqWFJinXZOOhsoDos3fm_8IH7X8btfqeKw9rKKyLcT8');
+        //     await doc.useServiceAccountAuth(creds);
+        //     await doc.useServiceAccountAuth(creds, 'uwuhouse@uwuhouse.iam.gserviceaccount.com');
+        //     await doc.loadInfo(); // loads document properties and worksheets
+        //     const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id] or doc.sheetsByTitle[title]
+
+        //     // const row={
+        //     //     status:'---',
+        //     //     name:'mon',
+        //     //     contact:'1234',
+        //     //     area:'baangkok',
+        //     //     type:'condo',
+        //     //     rental:'1',
+        //     //     duration:'1',
+        //     //     detailArea:'',
+        //     //     dayToGetIn:'',
+        //     //     people:'',
+        //     //     vehicle:false,
+        //     //     pet:false,
+        //     //     otherDetail:''                
+        //     // }
+        //     const row =[1,3,2,4,5,7,8,9,0];
+        //     // example using impersonation - NOTE: your service account must have "domain-wide delegation" enabled
+        //     // see https://developers.google.com/identity/protocols/oauth2/service-account#delegatingauthority
+           
+        //     await sheet.addRow(row);
+        // }
+        // test();
+        // async function addCustomerData(){
+        //     const doc = new GoogleSpreadsheet('1YqWFJinXZOOhsoDos3fm_8IH7X8btfqeKw9rKKyLcT8');
+        //     await promisify(doc.useServiceAccountAuth)(creds);
+        //     const info = await promisify(doc.getInfo)();
+        //     const sheet = info.worksheets[0];
+            
+        //     const row ={
+        //         name:'monx',
+        //         contact:'0840926156'
+        //     }
+        //     await promisify(sheet.addRow)(row);
+        //     console.log(row);
+        // }
+        // addCustomerData();
+        
         // let BangkokCheckbox = document.getElementById('BangkokCheckboxID').value;
         // let NonthaburiCheckbox =document.getElementById('NonthaburiCheckboxID').value;
         // let PathumthaniCheckbox =document.getElementById('PathumthaniCheckboxID').value;
@@ -147,14 +197,14 @@ const Formmmx =()=>{
         // }
 
 
-        // let BangkokCheckbox = document.getElementById('BangkokCheckboxID').value,
-        //  NonthaburiCheckbox =document.getElementById('NonthaburiCheckboxID').value,
-        //  PathumthaniCheckbox =document.getElementById('PathumthaniCheckboxID').value,
-        //  UdonthaniCheckbox =document.getElementById('UdonthaniCheckboxID').value,
+        // let BangkokCheckbox = document.getElementById('BangkokCheckboxID').checked,
+        //  NonthaburiCheckbox =document.getElementById('NonthaburiCheckboxID').checked,
+        //  PathumthaniCheckbox =document.getElementById('PathumthaniCheckboxID').checked,
+        //  UdonthaniCheckbox =document.getElementById('UdonthaniCheckboxID').checked,
         //  OtherArea = document.getElementById('OtherAreaID').value,
-        //  HouseTypeCheckbox = document.getElementById('HouseTypeCheckboxID').value,
-        //  CondoTypeCheckbox = document.getElementById('CondoTypeCheckboxID').value,
-        //  ApartmentTypeCheckbox=document.getElementById('ApartmentTypeCheckboxID').value,
+        //  HouseTypeCheckbox = document.getElementById('HouseTypeCheckboxID').checked,
+        //  CondoTypeCheckbox = document.getElementById('CondoTypeCheckboxID').checked,
+        //  ApartmentTypeCheckbox=document.getElementById('ApartmentTypeCheckboxID').checked,
         //  OtherType = document.getElementById('OtherTypeID').value,
         //  RentalFeePerMonth = document.getElementById('RentalFeePerMonthID').value,
         //  Duration = document.getElementById('Duration').value,
@@ -163,12 +213,12 @@ const Formmmx =()=>{
         //  HowManyPeopleInHouse = document.getElementById('HowManyPeopleInHouseID').value,
         //  HaveVehcle = document.getElementById('HaveVehcleID').value,
         //  DontHaveVehcle = document.getElementById('DontHaveVehcleID').value,
-        //  DontHavePet = document.getElementById('DontHavePetID').value,
-        //  DogPet =document.getElementById('DogPetID').value,
-        //  CatPet =document.getElementById('CatPetID').value,
-        //  WingPet =document.getElementById('WingPetID').value,
-        //  AnacondaPet =document.getElementById('AnacondaPetID').value,
-        //  DinosourPet = document.getElementById('DinosourPetID').value,
+        //  DontHavePet = document.getElementById('DontHavePetID').checked,
+        //  DogPet =document.getElementById('DogPetID').checked,
+        //  CatPet =document.getElementById('CatPetID').checked,
+        //  WingPet =document.getElementById('WingPetID').checked,
+        //  AnacondaPet =document.getElementById('AnacondaPetID').checked,
+        //  DinosourPet = document.getElementById('DinosourPetID').checked,
         //  OtherPet = document.getElementById('OtherPetID').value,
         //  OtherDetail = document.getElementById('OtherDetailID').value,
         //  CustomerName = document.getElementById('CustomerNameID').value,
@@ -178,8 +228,394 @@ const Formmmx =()=>{
         //  Emailx = document.getElementById('EmailIDx').value,
         //  OtherContact = document.getElementById('OtherContactID').value;
 
+        // console.log(Duration);
+        // let infomationGet ={
+        //     BangkokCheckbox:null,
+        //     NonthaburiCheckbox:null,
+        //     PathumthaniCheckbox:null,
+        //     UdonthaniCheckbox:null,
+        //     OtherArea:null,
+        //     HouseTypeCheckbox:null,
+        //     CondoTypeCheckbox:null,
+        //     ApartmentTypeCheckbox:null,
+        //     OtherType:null,
+        //     RentalFeePerMonth:null,
+        //     Duration:null,
+        //     DetailAreax: null,
+        //     datepicker:null,
+        //     HowManyPeopleInHouse:null,
+        //     HaveVehcle:null,
+        //     DontHaveVehcle:null,
+        //     DontHavePet:null,
+        //     DogPet:null,
+        //     CatPet:null,
+        //     WingPet:null,
+        //     AnacondaPet:null,
+        //     DinosourPet:null,
+        //     OtherPet:null,
+        //     OtherDetail:null,
+        //     CustomerName:null,
+        //     PhoneNumber:null,
+        //     Linex:null,
+        //     facebookx:null,
+        //     Emailx:null,
+        //     OtherContact:null,
+        // }
+            let db_googoleSheet_UwUHouseCustomerData ={
+                name:null,
+                contact:null,
+                area:null,
+                typeOfHouse:null,
+                budget:null,
+                duration:null,
+                detailAreaq:null,
+                dayToGetIn:null,
+                people:null,
+                vehicle:null,
+                pet:null,
+                otherDetail:null,
+                timestamp:null
+            }
+            let infomationGet ={
+                BangkokCheckbox:document.getElementById('BangkokCheckboxID').checked,
+                NonthaburiCheckbox:document.getElementById('NonthaburiCheckboxID').checked,
+                PathumthaniCheckbox:document.getElementById('PathumthaniCheckboxID').checked,
+                UdonthaniCheckbox:document.getElementById('UdonthaniCheckboxID').checked,
+                OtherArea:document.getElementById('OtherAreaID').value,
+                
+                HouseTypeCheckbox:document.getElementById('HouseTypeCheckboxID').checked,
+                CondoTypeCheckbox:document.getElementById('CondoTypeCheckboxID').checked,
+                ApartmentTypeCheckbox:document.getElementById('ApartmentTypeCheckboxID').checked,
+                OtherType:document.getElementById('OtherTypeID').value,
+                
+                RentalFeePerMonth:document.getElementById('RentalFeePerMonthID').value,
+                
+                Duration:document.getElementById('DurationID').value,
+                
+                DetailAreax: document.getElementById('DetailAreaxID').value,
+                
+                datepicker:document.getElementById('datepickerID').value,
+                
+                HowManyPeopleInHouse: document.getElementById('HowManyPeopleInHouseID').value,
+                
+                HaveVehcle: document.getElementById('HaveVehcleID').checked,
+                DontHaveVehcle: document.getElementById('DontHaveVehcleID').checked,
+                
+                DontHavePet: document.getElementById('DontHavePetID').checked,
+                DogPet:document.getElementById('DogPetID').checked,
+                CatPet:document.getElementById('CatPetID').checked,
+                WingPet:document.getElementById('WingPetID').checked,
+                AnacondaPet:document.getElementById('AnacondaPetID').checked,
+                DinosourPet:document.getElementById('DinosourPetID').checked,
+                OtherPet:document.getElementById('OtherPetID').value,
+                
+                OtherDetail:document.getElementById('OtherDetailID').value,
+                
+                CustomerName:document.getElementById('CustomerNameID').value,
+                
+                PhoneNumber:document.getElementById('PhoneNumberID').value,
+                Linex:document.getElementById('LineIDx').value,
+                facebookx:document.getElementById('facebookIDx').value,
+                Emailx:document.getElementById('EmailIDx').value,
+                OtherContact:document.getElementById('OtherContactID').value
+            }
+                    
+            // prepair data
+            
+            
+            // condition check infomation
+            // let conditionValidation ={
+            //     NameCheck:(infomationGet.CustomerName != ''),
+            //     ContactCheck:(infomationGet.PhoneNumber !=''),
+            //     AreaCheck:( infomationGet.BangkokCheckbox || 
+            //                 infomationGet.NonthaburiCheckbox ||
+            //                 infomationGet.PathumthaniCheckbox ||
+            //                 infomationGet.UdonthaniCheckbox ||
+            //                 infomationGet.OtherArea != ''
+            //     ),
+            //     TypeOfHouseCheck:(  infomationGet.HouseTypeCheckbox ||
+            //                         infomationGet.CondoTypeCheckbox ||
+            //                         infomationGet.ApartmentTypeCheckbox ||
+            //                         infomationGet.OtherType != ''
+            //         ),
+            //     RentalCheck:(infomationGet.RentalFeePerMonth != ''),
+            //     DurationCheck:(infomationGet.Duration != '---'),
+            //     DetailAreaCheck:(infomationGet.DetailAreax != ''),
+            //     DayToGetInCheck:(infomationGet.datepicker != ''),
+            //     PeopleCheck:(infomationGet.HowManyPeopleInHouse != '---'),
+            //     VehicleCheck:(infomationGet.HaveVehcle || infomationGet.DontHaveVehcle),
+            //     PetCheck:(
+            //         infomationGet.DontHavePet ||
+            //         infomationGet.DogPet ||
+            //         infomationGet.CatPet ||
+            //         infomationGet.WingPet ||
+            //         infomationGet.AnacondaPet ||
+            //         infomationGet.DinosourPet ||
+            //         infomationGet.OtherPet != ''
+            //     ),
+            // }
+            let conditionValidation ={
+                AreaCheck:( infomationGet.BangkokCheckbox || 
+                            infomationGet.NonthaburiCheckbox ||
+                            infomationGet.PathumthaniCheckbox ||
+                            infomationGet.UdonthaniCheckbox ||
+                            infomationGet.OtherArea != ''
+                ),
+                TypeOfHouseCheck:(  infomationGet.HouseTypeCheckbox ||
+                                    infomationGet.CondoTypeCheckbox ||
+                                    infomationGet.ApartmentTypeCheckbox ||
+                                    infomationGet.OtherType != ''
+                    ),
+                RentalCheck:(infomationGet.RentalFeePerMonth != ''),
+                DurationCheck:(infomationGet.Duration != '---'),
+                DetailAreaCheck:(infomationGet.DetailAreax != ''),
+                DayToGetInCheck:(infomationGet.datepicker != ''),
+                PeopleCheck:(infomationGet.HowManyPeopleInHouse != '---'),
+                VehicleCheck:(infomationGet.HaveVehcle || infomationGet.DontHaveVehcle),
+                PetCheck:(
+                    infomationGet.DontHavePet ||
+                    infomationGet.DogPet ||
+                    infomationGet.CatPet ||
+                    infomationGet.WingPet ||
+                    infomationGet.AnacondaPet ||
+                    infomationGet.DinosourPet ||
+                    infomationGet.OtherPet != ''
+                ),
+                NameCheck:(infomationGet.CustomerName != ''),
+                ContactCheck:(infomationGet.PhoneNumber !=''),
+            }
+            let numxxdxdc =[750,1080,1400,1630,1860,2150,2350,2550,2830,3700,4100];
+            let getalertTextInvalid =[];
+            let asdasdasdqwedgsertjer =[];
 
-        
+            let alertTextInvalid =[
+                ' บริเวณพื้นที่ ที่ท่านต้องการเช่า ',
+                ' ประเภทที่อยู่อาศัยที่ท่านต้องการ ',
+                ' ค่าเช่าที่ท่านต้องการ ',
+                ' ระยะเวลาที่ท่านต้องการเช่า ',
+                ' สถานที่ทำงาน หรือ สถานที่ที่ท่านต้องเดินทางเป็นประจำ ',
+                ' วันที่ท่านต้องการย้ายเข้า ',
+                ' จำนวนคนที่ท่านต้องการอยู่อาศัย ',
+                ' คุณมียานพาหนะส่วนตัว หรือไม่ ? ',
+                ' คุณมีสัตว์เลี้ยงไหม ? ',
+                ' ชื่อผู้ใช้งาน ',
+                ' เบอร์โทรศัพท์ ',
+            ];
+
+            if(
+                (
+                    conditionValidation.NameCheck &&
+                    conditionValidation.ContactCheck &&
+                    conditionValidation.AreaCheck &&
+                    conditionValidation.TypeOfHouseCheck &&
+                    conditionValidation.RentalCheck &&
+                    conditionValidation.DurationCheck &&
+                    conditionValidation.DetailAreaCheck &&
+                    conditionValidation.DayToGetInCheck &&
+                    conditionValidation.PeopleCheck &&
+                    conditionValidation.VehicleCheck &&
+                    conditionValidation.PeopleCheck 
+                )==false
+            ){
+                for(const [key,value] of Object.entries(conditionValidation)){
+                    if(!value){
+                        getalertTextInvalid.push(alertTextInvalid[0])
+                        asdasdasdqwedgsertjer.push(numxxdxdc[0])
+                    }
+                    alertTextInvalid.shift();
+                    numxxdxdc.shift();
+                }
+            alert(`ลืมกรอกข้อมูลอะไรหรือเปล่านะ...\n ${getalertTextInvalid}`);
+
+                scroll.scrollTo(asdasdasdqwedgsertjer[0],{
+                
+                delay:300,
+                duration:0,
+                smooth:'treaseOutQuadue',
+                });
+            }
+            else if(
+                conditionValidation.NameCheck &&
+                conditionValidation.ContactCheck &&
+                conditionValidation.AreaCheck &&
+                conditionValidation.TypeOfHouseCheck &&
+                conditionValidation.RentalCheck &&
+                conditionValidation.DurationCheck &&
+                conditionValidation.DetailAreaCheck &&
+                conditionValidation.DayToGetInCheck &&
+                conditionValidation.PeopleCheck &&
+                conditionValidation.VehicleCheck &&
+                conditionValidation.PeopleCheck 
+            ){
+                const prepairContact=()=>{
+                    let contact = `Phone number: ${infomationGet.PhoneNumber},`;
+                    if (infomationGet.Linex != ''){
+                        contact = contact+`LinID: ${infomationGet.Linex},`
+                    }
+                    if(infomationGet.facebookx !=''){
+                        contact = contact+`Facebook: ${infomationGet.facebookx},`
+                    }
+                    if(infomationGet.Emailx !=''){
+                        contact = contact+`Email: ${infomationGet.Emailx},`
+                    }
+                    if(infomationGet.OtherContact !=''){
+                        contact = contact+`Other: ${infomationGet.OtherContact},`
+                    }
+                    return(contact);
+    
+    
+                }
+                const prepairArea=()=>{
+                    let Area ='';
+                    if(infomationGet.BangkokCheckbox == true){
+                        Area = Area + `Bangkok,`
+                    }
+                    if(infomationGet.NonthaburiCheckbox == true){
+                        Area = Area +`Nonthaburi,`
+                    }
+                    if(infomationGet.PathumthaniCheckbox == true){
+                        Area = Area +`Pathumthani,`
+                    }
+                    if(infomationGet.UdonthaniCheckbox == true){
+                        Area = Area +`Udonthani,`
+                    }
+                    if(infomationGet.OtherArea !=''){
+                        Area = Area +`Other: ${infomationGet.OtherArea}`
+                    }
+                    return(Area);
+                }
+                const prepairHouseType=()=>{
+                    let houseType ='';
+                    if(infomationGet.HouseTypeCheckbox == true){
+                        houseType = houseType + `House,`
+                    }
+                    if(infomationGet.CondoTypeCheckbox == true){
+                        houseType = houseType + `Condo,`
+                    }
+                    if(infomationGet.ApartmentTypeCheckbox == true){
+                        houseType = houseType + `Apartment,`
+                    }
+                    if(infomationGet.OtherType !=''){
+                        houseType = houseType +`Other: ${infomationGet.OtherType}`
+                    }
+    
+                    return(houseType);
+                }
+                
+                const prepairVehicle=()=>{
+                    if(infomationGet.HaveVehcle == true){
+                        return(infomationGet.HaveVehcle);
+                    }
+                    else if(infomationGet.DontHaveVehcle == true){
+                        return(infomationGet.HaveVehcle);
+                    }
+                }
+    
+                const prepairPet=()=>{
+                    let pet ='';
+                    if(infomationGet.DontHavePet){
+                        pet = pet + `No pet,`
+                    }
+                    if(infomationGet.DogPet){
+                        pet = pet + `No pet,`
+                    }
+                    if(infomationGet.CatPet){
+                        pet = pet + `No pet,`
+                    }
+                    if(infomationGet.WingPet){
+                        pet = pet + `No pet,`
+                    }
+                    if(infomationGet.AnacondaPet){
+                        pet = pet + `No pet,`
+                    }
+                    if(infomationGet.DinosourPet){
+                        pet = pet + `No pet,`
+                    }
+                    if(infomationGet.OtherPet !=''){
+                        pet = pet +`Other: ${infomationGet.OtherPet}`
+                    }
+    
+                    return(pet);
+    
+                }
+    
+                
+                
+                        let getday = new Date().getDay();
+                        let getmonth = new Date().getMonth();
+                        let getdate = new Date().getDate();
+                        let getyear = new Date().getFullYear();
+                        
+                        let gethour = new Date().getHours();
+                        let getminute = new Date().getMinutes();
+                        let getsecond = new Date().getSeconds();
+                        
+                        const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                        const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                       
+                        db_googoleSheet_UwUHouseCustomerData.timestamp=`${days[getday]}, ${months[getmonth]}/${getdate}/${getyear}, ${gethour}h ${getminute}m ${getsecond}s`;
+                        db_googoleSheet_UwUHouseCustomerData.name = infomationGet.CustomerName;
+                        db_googoleSheet_UwUHouseCustomerData.contact = prepairContact();
+                        db_googoleSheet_UwUHouseCustomerData.area = prepairArea();
+                        db_googoleSheet_UwUHouseCustomerData.typeOfHouse =prepairHouseType();
+                        db_googoleSheet_UwUHouseCustomerData.budget = infomationGet.RentalFeePerMonth;
+                        db_googoleSheet_UwUHouseCustomerData.duration = infomationGet.Duration;
+                        db_googoleSheet_UwUHouseCustomerData.detailAreaq = infomationGet.DetailAreax;
+                        db_googoleSheet_UwUHouseCustomerData.dayToGetIn = infomationGet.datepicker;
+                        db_googoleSheet_UwUHouseCustomerData.people = infomationGet.HowManyPeopleInHouse;
+                        db_googoleSheet_UwUHouseCustomerData.vehicle = prepairVehicle();
+                        db_googoleSheet_UwUHouseCustomerData.pet = prepairPet();
+                        db_googoleSheet_UwUHouseCustomerData.otherDetail = infomationGet.OtherDetail;
+    
+                async function savedata (){
+                    const creds = require('../uwuhouse-666e5ef074de.json'); // the file saved above
+                    const doc = new GoogleSpreadsheet('1YqWFJinXZOOhsoDos3fm_8IH7X8btfqeKw9rKKyLcT8');
+                    await doc.useServiceAccountAuth(creds);
+                    await doc.useServiceAccountAuth(creds, 'uwuhouse@uwuhouse.iam.gserviceaccount.com');
+                    await doc.loadInfo(); // loads document properties and worksheets
+                    const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id] or doc.sheetsByTitle[title]
+    
+                    // const row={
+                    //     status:'---',
+                    //     name:'mon',
+                    //     contact:'1234',
+                    //     area:'baangkok',
+                    //     type:'condo',
+                    //     rental:'1',
+                    //     duration:'1',
+                    //     detailArea:'',
+                    //     dayToGetIn:'',
+                    //     people:'',
+                    //     vehicle:false,
+                    //     pet:false,
+                    //     otherDetail:''                
+                    // }
+                    const row =[
+                        'Finding',
+                        db_googoleSheet_UwUHouseCustomerData.name,
+                        db_googoleSheet_UwUHouseCustomerData.contact,
+                        db_googoleSheet_UwUHouseCustomerData.area,
+                        db_googoleSheet_UwUHouseCustomerData.typeOfHouse,
+                        db_googoleSheet_UwUHouseCustomerData.budget,
+                        db_googoleSheet_UwUHouseCustomerData.duration,
+                        db_googoleSheet_UwUHouseCustomerData.detailAreaq,
+                        db_googoleSheet_UwUHouseCustomerData.dayToGetIn,
+                        db_googoleSheet_UwUHouseCustomerData.people,
+                        db_googoleSheet_UwUHouseCustomerData.vehicle,
+                        db_googoleSheet_UwUHouseCustomerData.pet,
+                        db_googoleSheet_UwUHouseCustomerData.otherDetail,
+                        db_googoleSheet_UwUHouseCustomerData.timestamp
+    
+                    ];
+                    // example using impersonation - NOTE: your service account must have "domain-wide delegation" enabled
+                    // see https://developers.google.com/identity/protocols/oauth2/service-account#delegatingauthority
+                
+                    await sheet.addRow(row);
+                }
+                savedata();
+                history.push("/formInfomation/thankyouandgoodLuckx");
+                scroll.scrollToTop({duration:0,smooth:'easeOutQuad',}); 
+            }
         }
 
         
@@ -219,24 +655,24 @@ const Formmmx =()=>{
 
             <DivAnswer>
             <Xenter >
-                <CheckboxStyle type='checkbox' id='BangkokCheckboxID' value={false}/>
+                <CheckboxStyle type='checkbox' id='BangkokCheckboxID' />
                 <label>&nbsp;กรุงเทพมหานคร</label>
             </Xenter>
             <Xenter >
-                <CheckboxStyle type='checkbox' id='NonthaburiCheckboxID' value={false}/>
+                <CheckboxStyle type='checkbox' id='NonthaburiCheckboxID' />
                 <label>&nbsp;นนทบุรี</label>
             </Xenter>
             <Xenter >
-                <CheckboxStyle type='checkbox' id='PathumthaniCheckboxID' value={false}/>
+                <CheckboxStyle type='checkbox' id='PathumthaniCheckboxID' />
                 <label>&nbsp;ปทุมธานี</label>
             </Xenter>
             <Xenter >
-                <CheckboxStyle type='checkbox' id='UdonthaniCheckboxID' value={false}/>
+                <CheckboxStyle type='checkbox' id='UdonthaniCheckboxID' />
                 <label>&nbsp;อุดรธานี</label>
             </Xenter>
             <br/>
             <Xenter >
-                <TextInputStyle type='text' placeholder='อื่นๆ' id='OtherAreaID' value={null}/>
+                <TextInputStyle type='text' placeholder='อื่นๆ' id='OtherAreaID' />
             </Xenter>
             </DivAnswer>
             
@@ -663,7 +1099,7 @@ const Formmmx =()=>{
 
                 </Textverivy>
                 <DivButtonContent>
-                        <LinkUrl to='/formInfomation/thankyouandgoodLuckx'><Buttonxone   widthhh='100' FontSize='18' FontWeight='300' colorrr={colorx.blackM} Textx='ยืนยัน' /></LinkUrl>
+                        <div onClick={SendData}><Buttonxone   widthhh='100' FontSize='18' FontWeight='300' colorrr={colorx.blackM} Textx='ยืนยัน' /></div>
                         <div onClick={()=>scroll.scrollTo(750, {duration:0,smooth:'easeOutQuad'})}>
                             <TextLinksNoDot colorlinkText={colorx.blackM} Text='ตรวจสอบรายละเอียด' FontSize='16' FontWeight='300' />
                         </div>

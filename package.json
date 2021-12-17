@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.6.3",
     "bootstrap": "^4.6.0",
     "ciqu-react-calendar": "^1.0.2",
+    "google-spreadsheet": "^3.2.0",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",
     "react-bulma-components": "^3.4.0",
